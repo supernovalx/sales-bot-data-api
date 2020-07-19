@@ -10,7 +10,7 @@ df = pd.read_csv('data.csv')
 def get_employee(employee_id):
     if employee_id.isnumeric():
         for index, row in df.iterrows():
-            if row['ID'] == int(employee_id):
+            if str(row['ID']) == str(employee_id):
                 return df.loc[index].to_json()
     return '{}'
 
